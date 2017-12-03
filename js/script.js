@@ -18,12 +18,11 @@ var initialLocations = [
 ];
 
 
-// Global infowindow
+// Global variables
 var infoWindow;
-
-// Get the map initialized and loaded
 var map;
 
+// Get the map initialized and loaded
 function initMap() {
 
 	// Create a styles array to use with the map
@@ -107,6 +106,7 @@ function initMap() {
 		zoom: 14
 	});
 
+
 	// Hook the bindings to the viewmodel
 	ko.applyBindings(new ViewModel());
 }
@@ -140,10 +140,13 @@ var Location = function(data) {
 	$.getJSON(foursquareURL).done(function(json) {
 		var results = json.response.venues[0];
 
-		self.siteURL = results.url === undefined ? '' : results.url;
-		self.street = results.location.formattedAddress[0] === undefined ? '' : results.location.formattedAddress[0];
-		self.city_st_zip = results.location.formattedAddress[1] === undefined ? '' : results.location.formattedAddress[1];
-		self.phone = results.contact.formattedPhone === undefined ? '' : results.contact.formattedPhone;
+		// Make sure something is in results before we start assigning the values
+		if (results) {
+			self.street = results.location.formattedAddress[0] === undefined ? '' : results.location.formattedAddress[0];
+			self.city_st_zip = results.location.formattedAddress[1] === undefined ? '' : results.location.formattedAddress[1];
+			self.phone = results.contact.formattedPhone === undefined ? '' : results.contact.formattedPhone;
+			self.siteURL = results.url === undefined ? '' : results.url;
+		};
 
 	}).fail(function() {
 		// Throw an error message in case Foursquare isn't responding
@@ -188,7 +191,6 @@ var Location = function(data) {
 };
 
 
-
 /* ========  ViewModel ======= */
 var ViewModel = function() {
 	var self = this;
@@ -228,5 +230,5 @@ var ViewModel = function() {
 
 // If the map can't be loaded, throw an error message
 function googleError() {
-	window.alert('The map could not be loaded.');
+	window.alert('The map could not be loaded. Please check your connection and try again.');
 }
