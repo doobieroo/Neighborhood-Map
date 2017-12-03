@@ -34,6 +34,13 @@ Try clicking on a point on the map or an item in the list. The point should show
 
 Type some text in the search box and see the list and map narrow down to those entries that contain the search term.
 
+## Credits
+- [Google Maps JavaScript API V3 Reference](https://developers.google.com/maps/documentation/javascript/reference)
+- [Knockout.js Documentation](http://knockoutjs.com/documentation/introduction.html)
+- [Bootstrap 4 Tutorial](https://www.w3schools.com/bootstrap4/)
+- [Utility Functions in KnockoutJS](http://www.knockmeout.net/2011/04/utility-functions-in-knockoutjs.html).
+- [Google Maps API: pan to markers from a list](https://stackoverflow.com/questions/14306098/google-maps-api-pan-to-markers-from-a-list)
+
 ## License
 This project is licensed under the GNU General Public License. See the [LICENSE.md](https://github.com/doobieroo/Neighborhood-Map/blob/master/LICENSE) for details.
 
