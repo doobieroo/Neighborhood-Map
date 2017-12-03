@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Explore Cannon Beach, Oregon</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/styles.css">
+
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-12 header">
+					<h1> Explore Cannon Beach, Oregon</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="options-container">
+					<div class="col">
+						<div class="text"><strong>Search Within List: </strong></div>
+						<input class="input-box" data-bind="textInput: searchQuery" placeholder="Ex: Haystack Rock"><br><br><br>
+						<ul class="list list-group" data-bind="foreach: locations">
+							<li class="list-group-item" data-bind="text: name, click: $parent.listClick, visible: visible"></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col" id="map-container">
+					<div id="map"></div>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/libs/jquery.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+		<script src="js/libs/knockout-3.2.0.js"></script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCQaOJgZO4gWjT44ACE8TrV2HYYL_t17o&libraries=places,drawing,geometry&v=3&callback=initMap">
+		</script>
+		<script src="js/script.js"></script>
+
+
+	</body>
+</html>
