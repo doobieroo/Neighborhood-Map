@@ -17,6 +17,7 @@ In order to get a copy of the project up and running on your local machine for d
 - [Bootstrap](https://getbootstrap.com/)
 - [Knockout.js](http://knockoutjs.com/)
 - [jQuery](https://jquery.com/)
+- [Snazzy Maps](https://snazzymaps.com/)
 
 ### APIs
 - [Google Maps](https://developers.google.com/maps/documentation/javascript/)
